@@ -1,0 +1,286 @@
+/* Color Scheme */
+:root {
+  --primary: #E91E63;
+  --secondary: #1E88E5;
+  --success: #4CAF50;
+  --warning: #FF9800;
+  --danger: #F44336;
+  --light: #F5F5F5;
+  --dark: #212121;
+  --border: #BDBDBD;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  background: var(--light);
+  color: var(--dark);
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header */
+.header {
+  background: linear-gradient(135deg, var(--primary) 0%, #C2185B 100%);
+  color: white;
+  padding: 2rem 1rem;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.header p {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+/* Main Content */
+.main {
+  flex: 1;
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 2rem 1rem;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid var(--border);
+  overflow-x: auto;
+}
+
+.tab {
+  padding: 1rem 1.5rem;
+  border: none;
+  background: transparent;
+  color: var(--dark);
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  border-bottom: 3px solid transparent;
+  position: relative;
+  bottom: -2px;
+}
+
+.tab:hover {
+  color: var(--primary);
+}
+
+.tab.active {
+  color: var(--primary);
+  border-bottom-color: var(--primary);
+}
+
+/* Content */
+.content {
+  min-height: 400px;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  font-size: 1.5rem;
+  color: var(--dark);
+}
+
+/* Timeline */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.message-card {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid var(--primary);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.message-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.message-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.message-text {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0.5rem 0;
+}
+
+.message-meta {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.85rem;
+  color: #999;
+  margin-top: 1rem;
+}
+
+/* Mood Tracker */
+.mood-tracker {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.mood-card {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.mood-value {
+  font-size: 3rem;
+  margin: 1rem 0;
+}
+
+.mood-emoji {
+  font-size: 2rem;
+}
+
+.mood-chart {
+  margin-top: 2rem;
+}
+
+/* Distance */
+.distance-card {
+  background: white;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.distance-value {
+  font-size: 3rem;
+  color: var(--primary);
+  margin: 1rem 0;
+  font-weight: bold;
+}
+
+.distance-locations {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 1rem;
+  margin: 2rem 0;
+  align-items: center;
+}
+
+.location {
+  text-align: center;
+}
+
+.location-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.location-name {
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+}
+
+.location-status {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.arrow {
+  font-size: 2rem;
+  color: var(--border);
+}
+
+/* Footer */
+.footer {
+  background: var(--dark);
+  color: white;
+  padding: 1.5rem;
+  text-align: center;
+  margin-top: auto;
+  font-size: 0.9rem;
+}
+
+.footer p {
+  margin: 0.25rem 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .header h1 {
+    font-size: 1.5rem;
+  }
+
+  .main {
+    padding: 1rem;
+  }
+
+  .tabs {
+    gap: 0.5rem;
+  }
+
+  .tab {
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .message-card {
+    padding: 1rem;
+  }
+
+  .distance-locations {
+    grid-template-columns: 1fr;
+  }
+
+  .arrow {
+    transform: rotate(90deg);
+  }
+}
+
+/* Dark Mode (Future) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --light: #121212;
+    --dark: #FFFFFF;
+  }
+
+  .message-card,
+  .mood-card,
+  .distance-card {
+    background: #1E1E1E;
+  }
+
+  .message-header,
+  .location-status {
+    color: #BDBDBD;
+  }
+}
